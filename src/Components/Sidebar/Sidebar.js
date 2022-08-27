@@ -1,10 +1,24 @@
 import React from "react";
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ add, notes }) {
+  const noteTitles = notes.map((noteTitle) => {
+    return (
+      <div key={noteTitle.id} className="noteTitle">
+        <h3>Note {noteTitle.id}</h3>
+      </div>
+    );
+  });
+
   return (
     <div>
-      <h1>Sidebar</h1>
+      <div className="sidebar-header">
+        <h1>Notes</h1>
+        <button onClick={add} className="add">
+          +
+        </button>
+      </div>
+      <div className="note-list">{noteTitles}</div>
     </div>
   );
 }
