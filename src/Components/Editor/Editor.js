@@ -1,10 +1,12 @@
 import React from "react";
 import "./Editor.css";
+import ReactMde from "react-mde";
+import "react-mde/lib/styles/css/react-mde-all.css";
 
 function Editor() {
   return (
-    <div>
-      <h1>Editor</h1>
+    <div className="note-editor">
+      <ReactMde />
     </div>
   );
 }
