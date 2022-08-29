@@ -23,7 +23,7 @@ function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
   return (
     <div>
       <div className="sidebar-header">
-        <h1>Notes</h1>
+        <h2>Notes</h2>
         <button onClick={create} className="create">
           +
         </button>

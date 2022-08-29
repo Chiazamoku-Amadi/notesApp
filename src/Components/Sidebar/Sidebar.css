@@ -2,12 +2,15 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.5em 0;
   margin-bottom: 1em;
 }
 
+.sidebar-header > h2 {
+  font-size: 25px;
+}
+
 .create {
-  padding: 0.7em 1em;
+  padding: 0.5em 1em;
   background-color: #c227d5;
   color: #fff;
   border: 1px solid transparent;
@@ -25,6 +28,7 @@
 .noteTitle {
   padding: 0.7em 1em;
   text-align: center;
+  font-size: 15px;
 }
 
 .selected-note {
