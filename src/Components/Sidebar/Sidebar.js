@@ -3,6 +3,8 @@ import "./Sidebar.css";
 
 function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
   const noteTitles = notes.map((noteTitle, index) => {
+    const noteTitleText = noteTitle.body.split("\n")[0];
+
     return (
       <div
         key={noteTitle.id}
@@ -12,9 +14,11 @@ function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
         }`}
       >
         <h3>
-          {noteTitle.body.split("\n")[0].length > 15
-            ? noteTitle.body.split("\n")[0].substr(0, 15) + "..."
-            : noteTitle.body.split("\n")[0].substr(0, 15)}
+          {noteTitle.body === ""
+            ? `Note ${index + 1}`
+            : noteTitleText.length > 15
+            ? noteTitleText.substr(0, 15) + "..."
+            : noteTitleText.substr(0, 15)}
         </h3>
       </div>
     );
