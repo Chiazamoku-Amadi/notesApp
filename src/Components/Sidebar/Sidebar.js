@@ -1,11 +1,17 @@
 import React from "react";
 import "./Sidebar.css";
 
-function Sidebar({ add, notes }) {
-  const noteTitles = notes.map((noteTitle) => {
+function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
+  const noteTitles = notes.map((note, index) => {
     return (
-      <div key={noteTitle.id} className="noteTitle">
-        <h3>Note {noteTitle.id}</h3>
+      <div
+        key={note.id}
+        onClick={() => setCurrentNoteId(note.id)} // here, currentNoteId = note.Id
+        className={`noteTitle ${
+          note.id === currentNote.id ? "selected-note" : ""
+        }`}
+      >
+        <h3>Note {index + 1}</h3>
       </div>
     );
   });
@@ -14,7 +20,7 @@ function Sidebar({ add, notes }) {
     <div>
       <div className="sidebar-header">
         <h1>Notes</h1>
-        <button onClick={add} className="add">
+        <button onClick={create} className="create">
           +
         </button>
       </div>

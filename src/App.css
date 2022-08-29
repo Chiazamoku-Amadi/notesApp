@@ -6,3 +6,26 @@
   display: flex;
   padding: 3em 0;
 }
+
+.landing-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  /* background-color: cyan; */
+}
+
+.landing-page > h3 {
+  font-size: 40px;
+}
+
+.create-first-note {
+  padding: 1em 3em;
+  background-color: #c227d5;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}

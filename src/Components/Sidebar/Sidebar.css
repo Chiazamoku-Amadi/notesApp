@@ -3,9 +3,10 @@
   justify-content: space-around;
   align-items: center;
   padding: 0.5em 0;
+  margin-bottom: 1em;
 }
 
-.add {
+.create {
   padding: 0.7em 1em;
   background-color: #c227d5;
   color: #fff;
@@ -17,15 +18,17 @@
 .note-list {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
+  cursor: pointer;
 }
 
 .noteTitle {
   padding: 0.7em 1em;
+  text-align: center;
 }
 
 .selected-note {
-  padding: 0.7em 1em;
+  text-align: center;
   background-color: #c227d5;
   color: #fff;
   border: 1px solid transparent;

@@ -1,3 +1,14 @@
 .mde-header {
   padding: 0.5em 0;
 }
+
+.mde-header .mde-tabs button {
+  padding: 0.5em 1.5em;
+}
+
+.mde-header .mde-tabs button.selected {
+  background-color: #c227d5;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
