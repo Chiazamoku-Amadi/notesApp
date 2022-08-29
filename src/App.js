@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Editor from "./Components/Editor/Editor";
@@ -6,9 +6,15 @@ import Split from "react-split";
 import { nanoid } from "nanoid";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes")) || []
+  );
   const curNoteId = notes[0] ? notes[0].id : "";
   const [currentNoteId, setCurrentNoteId] = useState(curNoteId);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
+  }, [notes]);
 
   function createNewNote() {
     const newNote = {
@@ -18,8 +24,8 @@ function App() {
     setNotes((prevNotes) => [...prevNotes, newNote]);
     setCurrentNoteId(newNote.id);
 
-    console.log(currentNoteId);
     console.log(newNote.id);
+    console.log(currentNoteId); // Why is newNote.id != currentNoteId?
   }
 
   function getCurrentNote() {
