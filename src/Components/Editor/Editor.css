@@ -8,3 +8,7 @@
   border: 1px solid transparent;
   border-radius: 7px;
 }
+
+.gutter {
+  background-color: #d5d5d5;
+}

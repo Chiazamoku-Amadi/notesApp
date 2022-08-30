@@ -62,7 +62,7 @@ function App() {
   return (
     <div className="App">
       {notes.length > 0 ? (
-        <Split className="wrapper" sizes={[25, 75]} direction={"horizontal"}>
+        <Split className="wrapper" sizes={[20, 80]} direction={"horizontal"}>
           <Sidebar
             create={createNewNote}
             notes={notes}

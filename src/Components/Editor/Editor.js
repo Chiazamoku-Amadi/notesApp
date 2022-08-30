@@ -21,10 +21,11 @@ function Editor({ currentNote, editNote }) {
         onChange={editNote}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
-        loadingPreview="Loading..."
-        generateMarkdownPreview={(markdown) =>
-          Promise.resolve(converter.makeHtml(markdown))
+        generateMarkdownPreview={
+          (markdown) => Promise.resolve(converter.makeHtml(markdown)) // how does this work?
         }
+        minEditorHeight={80}
+        heightUnits="vh"
       />
     </div>
   );
