@@ -70,4 +70,12 @@
     padding: 0.2em 0.7em;
     font-size: 10px;
   }
+
+  .delete {
+    font-size: 15px;
+  }
+
+  .noteTitle .delete {
+    visibility: visible;
+  }
 }
