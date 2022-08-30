@@ -19,7 +19,8 @@ function App() {
   function createNewNote() {
     const newNote = {
       id: nanoid(),
-      body: `Note ${notes.length + 1}`,
+      // body: `Note ${notes.length + 1}`,
+      body: "Type your title here",
     };
     setNotes((prevNotes) => [...prevNotes, newNote]);
     setCurrentNoteId(newNote.id);
@@ -36,13 +37,22 @@ function App() {
 
   function editNote(text) {
     // why pass text?
-    setNotes((oldNotes) =>
-      oldNotes.map((oldNote) => {
-        return oldNote.id === currentNoteId
-          ? { ...oldNote, body: text }
-          : oldNote;
-      })
-    );
+    // setNotes((oldNotes) =>
+    //   oldNotes.map((oldNote) => {
+    //     return oldNote.id === currentNoteId
+    //       ? { ...oldNote, body: text }
+    //       : oldNote;
+    //   })
+    // );
+    setNotes((prevNotes) => {
+      const newArray = [];
+      for (const prevNote of prevNotes) {
+        prevNote.id === currentNoteId
+          ? newArray.unshift({ ...prevNote, body: text })
+          : newArray.push(prevNote);
+      }
+      return newArray;
+    });
   }
 
   return (

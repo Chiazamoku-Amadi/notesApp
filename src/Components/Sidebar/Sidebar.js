@@ -14,8 +14,13 @@ function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
         }`}
       >
         <h3>
-          {noteTitle.body === ""
-            ? `Note ${index + 1}`
+          {/* {if (noteTitle.body === "") {`Note ${index + 1}`} else if
+          (noteTitleText.length > 15) {noteTitleText.substr(0, 15) + "..."} else{" "}
+          {noteTitleText.substr(0, 15)}} */}
+          {/* why isn't this working? */}
+
+          {noteTitle.body === "" || noteTitle.body === "Type your title here"
+            ? "Untitled"
             : noteTitleText.length > 15
             ? noteTitleText.substr(0, 15) + "..."
             : noteTitleText.substr(0, 15)}
