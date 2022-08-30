@@ -25,8 +25,8 @@ function App() {
     setNotes((prevNotes) => [...prevNotes, newNote]);
     setCurrentNoteId(newNote.id);
 
-    console.log(newNote.id);
-    console.log(currentNoteId); // Why is newNote.id != currentNoteId?
+    // console.log(newNote.id);
+    // console.log(currentNoteId); // Why is newNote.id != currentNoteId?
   }
 
   function getCurrentNote() {
@@ -55,6 +55,10 @@ function App() {
     });
   }
 
+  function deleteNote(event, noteId) {
+    setNotes((notes) => notes.filter((note) => note.id !== noteId));
+  }
+
   return (
     <div className="App">
       {notes.length > 0 ? (
@@ -64,6 +68,7 @@ function App() {
             notes={notes}
             currentNote={getCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
+            deleteNote={deleteNote}
           />
           {currentNoteId && notes.length > 0 && (
             <Editor currentNote={getCurrentNote()} editNote={editNote} />

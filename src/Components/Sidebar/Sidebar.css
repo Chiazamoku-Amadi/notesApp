@@ -29,6 +29,23 @@
   padding: 0.7em 1em;
   text-align: center;
   font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.noteTitle .delete {
+  visibility: hidden;
+}
+
+.noteTitle:hover .delete {
+  visibility: visible;
 }
 
 .selected-note {

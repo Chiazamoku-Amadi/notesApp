@@ -1,14 +1,14 @@
 import React from "react";
 import "./Sidebar.css";
+import { BsTrash } from "react-icons/bs";
 
-function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
+function Sidebar({ create, notes, currentNote, setCurrentNoteId, deleteNote }) {
   const noteTitles = notes.map((noteTitle, index) => {
     const noteTitleText = noteTitle.body.split("\n")[0];
-
     return (
       <div
         key={noteTitle.id}
-        onClick={() => setCurrentNoteId(noteTitle.id)} // here, currentNoteId = noteTitle.Id
+        onClick={() => setCurrentNoteId(noteTitle.id)}
         className={`noteTitle ${
           noteTitle.id === currentNote.id ? "selected-note" : ""
         }`}
@@ -25,6 +25,12 @@ function Sidebar({ create, notes, currentNote, setCurrentNoteId }) {
             ? noteTitleText.substr(0, 15) + "..."
             : noteTitleText.substr(0, 15)}
         </h3>
+        <button
+          onClick={(event) => deleteNote(event, noteTitle.id)}
+          className="delete"
+        >
+          <BsTrash />
+        </button>
       </div>
     );
   });
